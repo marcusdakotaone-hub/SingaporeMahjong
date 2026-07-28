@@ -1,23 +1,40 @@
 body {
     margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     background: #0b6b3a;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
     text-align: center;
 }
 
 h1 {
-    margin-top: 60px;
-    color: #f4d35e;
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
 }
 
 button {
-    margin-top: 30px;
-    padding: 15px 30px;
-    font-size: 20px;
+    background: ivory;
+    color: #154734;
     border: none;
-    border-radius: 12px;
-    background: #f4d35e;
-    color: #0b6b3a;
+    padding: 18px 36px;
+    font-size: 1.2rem;
+    border-radius: 14px;
+    cursor: pointer;
     font-weight: bold;
+}
+
+button:hover {
+    transform: scale(1.05);
 }
