@@ -1,40 +1,41 @@
 body {
     margin: 0;
-    padding: 0;
+    background: #0b5f2a;
     font-family: Arial, sans-serif;
-    background: #0b6b3a;
-    color: white;
+}
+
+.table {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    height: 100vh;
+    padding: 30px;
+    box-sizing: border-box;
 }
 
-.container {
-    text-align: center;
-}
-
-h1 {
-    font-size: 2.4rem;
-    margin-bottom: 10px;
-}
-
-p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-}
-
-button {
-    background: ivory;
-    color: #154734;
-    border: none;
-    padding: 18px 36px;
-    font-size: 1.2rem;
-    border-radius: 14px;
-    cursor: pointer;
+.player {
+    color: white;
+    font-size: 28px;
     font-weight: bold;
 }
 
-button:hover {
-    transform: scale(1.05);
+.board {
+    display: grid;
+    grid-template-columns: repeat(2, 140px);
+    grid-template-rows: repeat(2, 190px);
+    gap: 25px;
+}
+
+.tile {
+    background: linear-gradient(to bottom, #fefefe, #e6e6e6);
+    border-radius: 12px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+    border: 2px solid #d0d0d0;
+    cursor: pointer;
+    transition: transform 0.6s;
+}
+
+.tile:hover {
+    transform: scale(1.03);
 }
