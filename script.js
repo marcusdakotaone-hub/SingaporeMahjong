@@ -1,3 +1,5 @@
+alert("Script Loaded!");
+
 const windTiles = ["東", "南", "西", "北"];
 
 // Shuffle (Fisher–Yates)
