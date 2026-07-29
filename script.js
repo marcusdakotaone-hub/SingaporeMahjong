@@ -1,3 +1,5 @@
+console.log("Script started");
+
 const winds = ["東", "南", "西", "北"];
 
 // Fisher–Yates Shuffle
@@ -14,6 +16,8 @@ const instruction = document.getElementById("instruction");
 const continueBtn = document.getElementById("continueBtn");
 
 const tiles = document.querySelectorAll(".tile");
+
+alert("Found " + tiles.length + " tiles");
 
 tiles.forEach(tile => {
 
