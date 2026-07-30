@@ -1,46 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singapore Mahjong</title>
+    <title>Singapore Mahjong - Wind & Animal Selector</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="table">
+    <main class="home-screen">
 
+        <section class="table">
 
-<h1>Singapore Mahjong</h1>
-<h3>Wind & Animal Selector</h3>
+            <h1>Singapore Mahjong</h1>
 
-        <h2 id="playerText">
-            Player 1
-        </h2>
+            <p class="subtitle">
+                Wind & Animal Selector
+            </p>
 
-        <p id="instruction">
-            Choose a Wind Tile
-        </p>
+            <div class="mahjong-tiles">
 
-        <div class="board">
+                <div class="tile">東</div>
+                <div class="tile">南</div>
+                <div class="tile">西</div>
+                <div class="tile">北</div>
 
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
-            <div class="tile"></div>
+            </div>
 
-        </div>
+            <button id="startButton">
+                Start Game
+            </button>
 
+        </section>
 
-    </div>
+    </main>
 
-  <button id="continueBtn" hidden>Continue</button>  
-   
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
-
 </html>

@@ -1,101 +1,43 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singapore Mahjong - Wind & Animal Selector</title>
 
-body {
-    background: #2f6b35;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-}
+    <link rel="stylesheet" href="style.css">
+</head>
 
-.table {
-    min-height: 100vh;
+<body>
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    <main class="home-screen">
 
-    padding-top: 40px;
-}
+        <section class="table">
 
-h1 {
-    font-size: 34px;
-    margin-bottom: 18px;
-}
+            <h1>Singapore Mahjong</h1>
 
-h2 {
-    font-size: 46px;
-    margin-bottom: 10px;
-}
+            <p class="subtitle">
+                Wind & Animal Selector
+            </p>
 
-#instruction {
-    font-size: 22px;
-    margin-bottom: 40px;
-}
+            <div class="mahjong-tiles">
 
-.board {
-    display: grid;
+                <div class="tile">東</div>
+                <div class="tile">南</div>
+                <div class="tile">西</div>
+                <div class="tile">北</div>
 
-    grid-template-columns: repeat(2, 150px);
-    grid-template-rows: repeat(2, 210px);
+            </div>
 
-    gap: 28px;
-}
+            <button id="startButton">
+                Start Game
+            </button>
 
-.tile {
-    width: 150px;
-    height: 210px;
+        </section>
 
-    background: linear-gradient(#fafafa, #ececec);
+    </main>
 
-    border-radius: 18px;
+    <script src="script.js"></script>
 
-    border: 3px solid #d8d8d8;
-
-    box-shadow:
-        0 8px 18px rgba(0,0,0,0.30);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-size: 84px;
-    font-weight: bold;
-
-    cursor: pointer;
-
-    user-select: none;
-
-    transition:
-        transform .35s ease,
-        box-shadow .25s ease;
-}
-
-.tile:hover {
-    transform: scale(1.03);
-}
-
-.tile:active {
-    transform: scale(.97);
-}
-
-#continueBtn {
-    margin-top: 45px;
-
-    padding: 16px 34px;
-
-    font-size: 22px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background: gold;
-
-    cursor: pointer;
-
-    font-weight: bold;
-}
+</body>
+</html>
