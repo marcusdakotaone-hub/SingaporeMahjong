@@ -52,10 +52,10 @@ tiles.forEach(tile => {
 continueBtn.addEventListener("click", () => {
 
     const animals = [
-        "🐭 Rat",
-        "🐮 Ox",
-        "🐯 Tiger",
-        "🐰 Rabbit"
+        "Cat",
+        "Rat",
+        "Rooster",
+        "Centipede"
     ];
 
     // Shuffle animals
