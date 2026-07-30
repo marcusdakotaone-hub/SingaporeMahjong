@@ -1,15 +1,17 @@
-alert("Script started");
-
 const winds = ["東", "南", "西", "北"];
 
-// Fisher–Yates Shuffle
-for (let i = winds.length - 1; i > 0; i--) {
+// Shuffle array
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
-    [winds[i], winds[j]] = [winds[j], winds[i]];
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
+shuffle(winds);
+
 let currentPlayer = 1;
-let nextWind = 0;
+let currentWind = 0;
 
 const playerText = document.getElementById("playerText");
 const instruction = document.getElementById("instruction");
@@ -17,79 +19,62 @@ const continueBtn = document.getElementById("continueBtn");
 
 const tiles = document.querySelectorAll(".tile");
 
-
 tiles.forEach(tile => {
 
-    tile.addEventListener("click", () => {
+  tile.addEventListener("click", () => {
 
-        // Ignore tiles already chosen
-        if (tile.dataset.revealed === "true") return;
+    // Ignore already revealed tiles
+    if (tile.dataset.revealed === "true") return;
 
-        tile.dataset.revealed = "true";
+    tile.dataset.revealed = "true";
 
-        tile.textContent = winds[nextWind];
+    tile.textContent = winds[currentWind];
+    tile.style.fontSize = "80px";
 
-        nextWind++;
+    currentWind++;
 
-        if (currentPlayer < 4) {
+    if (currentPlayer < 4) {
 
-            currentPlayer++;
+      currentPlayer++;
 
-            playerText.textContent = `Player ${currentPlayer}`;
-            instruction.textContent = "Choose a Wind Tile";
+      playerText.textContent = `Player ${currentPlayer}`;
+      instruction.textContent = "Choose a Wind Tile";
 
-        } else {
+    } else {
 
-            playerText.textContent = "Wind Draw Complete";
-            instruction.textContent = "Tap Continue";
+      playerText.textContent = "Wind Draw Complete";
+      instruction.textContent = "Tap Continue";
 
-            continueBtn.hidden = false;
-        }
+      continueBtn.hidden = false;
 
-    });
-
-/*
-continueBtn.addEventListener("click", () => {
-
-    const animals = [
-        "Cat",
-        "Rat",
-        "Rooster",
-        "Centipede"
-    ];
-
-    // Shuffle animals
-    for (let i = animals.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [animals[i], animals[j]] = [animals[j], animals[i]];
     }
 
-    let message = "Animal Draw\n\n";
-
-    animals.forEach((animal, index) => {
-        message += `Player ${index + 1}: ${animal}\n`;
-    });
-
-    alert(message);
-
-});
-*/
-
-
-const seats = ["East", "South", "West", "North"];
-
-function shuffle(array) {
-  return array.sort(() => Math.random() - 0.5);
-}
-
-function assignSeats() {
-  const shuffled = shuffle([...seats]);
-
-  let result = "";
-
-  shuffled.forEach((seat, index) => {
-    result += `Player ${index + 1}: ${seat}\n`;
   });
 
-  alert(result);
-}
+});
+
+continueBtn.addEventListener("click", () => {
+
+  const animals = [
+    "Cat",
+    "Rat",
+    "Rooster",
+    "Centipede"
+  ];
+
+  shuffle(animals);
+
+  playerText.textContent = "Animal Draw";
+  instruction.textContent = "Results";
+
+  tiles.forEach((tile, index) => {
+
+    tile.textContent = animals[index];
+    tile.style.fontSize = "32px";
+    tile.dataset.revealed = "false";
+
+  });
+
+  continueBtn.hidden = true;
+
+});
