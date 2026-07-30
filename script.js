@@ -17,7 +17,6 @@ const continueBtn = document.getElementById("continueBtn");
 
 const tiles = document.querySelectorAll(".tile");
 
-alert("Found " + tiles.length + " tiles");
 
 tiles.forEach(tile => {
 
