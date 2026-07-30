@@ -48,7 +48,7 @@ tiles.forEach(tile => {
 
     });
 
-});
+/*
 continueBtn.addEventListener("click", () => {
 
     const animals = [
@@ -73,6 +73,7 @@ continueBtn.addEventListener("click", () => {
     alert(message);
 
 });
+*/
 
 
 const seats = ["East", "South", "West", "North"];
