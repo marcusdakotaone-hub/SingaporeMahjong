@@ -50,9 +50,46 @@ tiles.forEach(tile => {
     });
 
 });
-
 continueBtn.addEventListener("click", () => {
 
-    alert("Animal Draw coming in Sprint 6 🀄");
+    const animals = [
+        "🐭 Rat",
+        "🐮 Ox",
+        "🐯 Tiger",
+        "🐰 Rabbit"
+    ];
+
+    // Shuffle animals
+    for (let i = animals.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [animals[i], animals[j]] = [animals[j], animals[i]];
+    }
+
+    let message = "Animal Draw\n\n";
+
+    animals.forEach((animal, index) => {
+        message += `Player ${index + 1}: ${animal}\n`;
+    });
+
+    alert(message);
 
 });
+
+
+const seats = ["East", "South", "West", "North"];
+
+function shuffle(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+function assignSeats() {
+  const shuffled = shuffle([...seats]);
+
+  let result = "";
+
+  shuffled.forEach((seat, index) => {
+    result += `Player ${index + 1}: ${seat}\n`;
+  });
+
+  alert(result);
+}
