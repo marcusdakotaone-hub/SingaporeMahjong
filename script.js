@@ -1,4 +1,4 @@
-console.log("Script started");
+alert("Script started");
 
 const winds = ["東", "南", "西", "北"];
 
